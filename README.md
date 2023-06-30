@@ -22,7 +22,7 @@ Use : Spring, Jpa, Mysql, Redis, Docker, AWS
 ## 주문 서버
 
 ### 셀러
-- [x] 상품 등록, 수정
+- [ ] 상품 등록, 수정
 - [ ] 상품 삭제
 - [ ] 판매 내역 조회
 - [ ] 정산
@@ -34,5 +34,5 @@ Use : Spring, Jpa, Mysql, Redis, Docker, AWS
 - [ ] 장바구니 확인
 - [ ] 주문하기
 - [ ] 주문내역 이메일로 발송
-      
+     
 
