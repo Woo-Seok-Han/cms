@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+spring:
+  config:
+    activate:
+      on-profile: test
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  datasource:
+    url: jdbc:h2:file:/Users/hhh/test
+    driver-class-name: org.h2.Driver
+    username: sa
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+feign:
+  okhttp:
+    enabled: true
