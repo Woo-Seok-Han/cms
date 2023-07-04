@@ -45,3 +45,7 @@ subprojects {
         useJUnitPlatform()
     }
 }
+
+dependencies {
+    implementation 'commons-lang:commons-lang:2.6'
+}
