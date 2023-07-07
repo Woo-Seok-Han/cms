@@ -1,5 +1,7 @@
 package com.waffle.user.exception;
 
+import javax.servlet.ServletException;
+import javax.sql.rowset.serial.SerialException;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
