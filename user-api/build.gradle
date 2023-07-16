@@ -2,32 +2,15 @@ plugins {
     id 'java'
 }
 
-group = 'com.waffle'
-version = '0.0.1-SNAPSHOT'
-
 repositories {
     mavenCentral()
 }
 
-ext {
-    set('springCloudVersion', "2021.0.5")
-}
-
 dependencies {
-    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
-    implementation 'io.springfox:springfox-boot-starter:3.0.0'
-    implementation 'commons-lang:commons-lang:2.6'
+    implementation project(':cms-domain')
 
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-
-
-}
-
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-    }
 }
 
 
