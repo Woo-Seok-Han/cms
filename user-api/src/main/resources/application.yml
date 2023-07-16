@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+spring:
+  config:
+    activate:
+      on-profile: default
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/cms?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+feign:
+  okhttp:
+    enabled: true

@@ -1,1 +1,5 @@
 rootProject.name = 'cms'
+include 'user-api'
+include 'cms-domain'
+
+
