@@ -20,5 +20,4 @@ public class SignInController {
     public ResponseEntity<String> signInCustomer(@RequestBody SignInForm form) {
         return ResponseEntity.ok(signInApplication.customerLoginToken(form));
     }
-
 }

@@ -12,7 +12,9 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @WebFilter(urlPatterns = "/customer/*")
 @RequiredArgsConstructor
 public class CustomerFilter implements Filter {
@@ -25,7 +27,8 @@ public class CustomerFilter implements Filter {
         throws IOException, ServletException {
 
         HttpServletRequest req = (HttpServletRequest) request;
-        String token = req.getHeader("X-AUTH_TOKEN");
+        String token = req.getHeader("X-AUTH-TOKEN");
+        log.info("token string : " + token);
 
         if(!jwtAuthenticationProvider.validateToken(token)){
             throw new ServletException("Invalid Access");

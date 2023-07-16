@@ -34,17 +34,18 @@ public class JwtAuthenticationProvider {
             .compact();
     }
 
-    public boolean validateToken(String jwtToken){
-        try{
+    public boolean validateToken(String jwtToken) {
+        try {
             Jws<Claims> claimsJws = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(jwtToken);
             return !claimsJws.getBody().getExpiration().before(new Date());
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
 
     public UserVo getUserVo(String token) {
         Claims c = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();
-        return new UserVo(Long.valueOf(Objects.requireNonNull(Aes256Util.decrypt(c.getId()))), Aes256Util.decrypt(c.getSubject()));
+        return new UserVo(Long.valueOf(Objects.requireNonNull(Aes256Util.decrypt(c.getId()))),
+            Aes256Util.decrypt(c.getSubject()));
     }
 }

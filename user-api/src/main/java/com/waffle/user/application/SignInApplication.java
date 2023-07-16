@@ -18,7 +18,7 @@ public class SignInApplication {
 
     private final CustomerService customerService;
     private final JwtAuthenticationProvider provider;
-    public String customerLoginToken(SignInForm form) {
+    public String customerLoginToken(final SignInForm form) {
         // 1. 로그인 가능 여부
         Customer c = customerService.findValidCustomer(form.getEmail(), form.getPassword())
             .orElseThrow(() -> new CustomException(ErrorCode.LOGIN_CHECK_FAIL));
