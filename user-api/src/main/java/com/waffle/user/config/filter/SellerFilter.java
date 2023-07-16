@@ -3,6 +3,7 @@ package com.waffle.user.config.filter;
 import com.waffle.domain.common.UserVo;
 import com.waffle.domain.config.JwtAuthenticationProvider;
 import com.waffle.user.service.cusotmer.CustomerService;
+import com.waffle.user.service.seller.SellerService;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -15,12 +16,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@WebFilter(urlPatterns = "/customer/*")
+@WebFilter(urlPatterns = "/seller/*")
 @RequiredArgsConstructor
-public class CustomerFilter implements Filter {
+public class SellerFilter implements Filter {
 
     private final JwtAuthenticationProvider jwtAuthenticationProvider;
-    private final CustomerService customerService;
+    private final SellerService sellerService;
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -35,7 +36,7 @@ public class CustomerFilter implements Filter {
         }
 
         UserVo vo = jwtAuthenticationProvider.getUserVo(token);
-        customerService.findByIdAndEmail(vo.getId(), vo.getEmail()).orElseThrow(() -> new SecurityException("Invalid Access"));
+        sellerService.findByIdAndEmail(vo.getId(), vo.getEmail()).orElseThrow(() -> new SecurityException("Invalid Access"));
 
         chain.doFilter(request, response);
     }

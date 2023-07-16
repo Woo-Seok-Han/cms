@@ -1,4 +1,4 @@
-package com.waffle.user.service;
+package com.waffle.user.service.cusotmer;
 
 import com.waffle.user.domain.model.SignUpForm;
 import com.waffle.user.domain.model.Customer;
