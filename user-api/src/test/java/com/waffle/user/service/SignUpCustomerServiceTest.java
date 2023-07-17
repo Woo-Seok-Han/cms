@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.waffle.user.domain.model.Customer;
 import com.waffle.user.domain.model.SignUpForm;
+import com.waffle.user.service.cusotmer.SignUpCustomerService;
 import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

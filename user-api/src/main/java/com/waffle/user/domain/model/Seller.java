@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,8 +16,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Customer extends BaseEntity {
+@NoArgsConstructor
+public class Seller extends BaseEntity{
 
     @Id
     @Column(name = "id", nullable = false)
@@ -36,14 +35,10 @@ public class Customer extends BaseEntity {
     private String verficationCode;
     private boolean verify;
 
-    @Column(columnDefinition = "int default 0")
-    private Integer balance;
-
     @Builder
-    public Customer(Long id, String email, String name, String password, String phone,
+    public Seller(Long id, String email, String name, String password, String phone,
         LocalDate birth,
-        LocalDateTime verifyExpiredAt,
-        String verficationCode) {
+        LocalDateTime verifyExpiredAt, String verficationCode) {
         this.id = id;
         this.email = email;
         this.name = name;
@@ -53,11 +48,10 @@ public class Customer extends BaseEntity {
         this.verifyExpiredAt = verifyExpiredAt;
         this.verficationCode = verficationCode;
         this.verify = false;
-        this.balance = 0;
     }
 
-    public static Customer from(SignUpForm form) {
-        return Customer.builder()
+    public static Seller from(SignUpForm form) {
+        return Seller.builder()
             .email(form.getEmail().toLowerCase(Locale.ROOT))
             .password(form.getPassword())
             .name(form.getName())
@@ -65,5 +59,4 @@ public class Customer extends BaseEntity {
             .phone(form.getPhone())
             .build();
     }
-
 }
