@@ -1,4 +1,4 @@
-package com.waffle.user.service;
+package com.waffle.user.service.cusotmer;
 
 import com.waffle.user.domain.model.Customer;
 import com.waffle.user.domain.repository.CustomerRepository;

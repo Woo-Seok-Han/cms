@@ -16,7 +16,8 @@ public enum ErrorCode {
     LOGIN_CHECK_FAIL(HttpStatus.BAD_REQUEST, "아이디나 패스워드를 확인해주세요."),
     EXPIRE_CODE(HttpStatus.BAD_REQUEST, "인증 시간이 만료 되었습니다."),
 
-
+    // balance
+    NOT_ENOUGH_BALANCE(HttpStatus.BAD_REQUEST, "잔액이 부족합니다."),
 
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "관리자에게 문의 해주세요.");
 
