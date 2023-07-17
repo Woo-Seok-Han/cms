@@ -1,0 +1,58 @@
+### 회원가입 ( 고객 )
+POST http://localhost:8081/signup/customer
+Content-Type: application/json
+
+{
+  "birth": "2023-07-16",
+  "email": "woosuk1893@naver.com",
+  "name": "han",
+  "password": "1234",
+  "phone": "01077421893"
+}
+
+### 로그인 ( 고객 )
+POST http://localhost:8081/signin/customer
+Content-Type: application/json
+
+{
+  "email": "woosuk1893@naver.com",
+  "password": "1234"
+}
+### 회원 정보 조회 ( 고객 )
+GET http://localhost:8081/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3bW1qQkFkMkwzN1l2YVdxd3FKR09rbzNRaUhhMXlaMUpmbFAxRlorNSs0PSIsImp0aSI6IkZ3NzFjREIzVElFbnRQQ0JoaDhTNFE9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODk1Nzc3NjEsImV4cCI6MTY4OTY2NDE2MX0.5zSYeY1UmvxCbePchmyKx2VeFAND4RH1nODZodvQbPw
+
+### 잔액 변경 ( 고객 )
+POST http://localhost:8081/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3bW1qQkFkMkwzN1l2YVdxd3FKR09rbzNRaUhhMXlaMUpmbFAxRlorNSs0PSIsImp0aSI6IkZ3NzFjREIzVElFbnRQQ0JoaDhTNFE9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODk1Nzc3NjEsImV4cCI6MTY4OTY2NDE2MX0.5zSYeY1UmvxCbePchmyKx2VeFAND4RH1nODZodvQbPw
+
+{
+  "from": "admin",
+  "message": "증가",
+  "money": 2000
+}
+
+#########################
+
+### 회원 가입 ( 셀러 )
+POST http://localhost:8081/signup/seller
+Content-Type: application/json
+
+{
+  "birth": "2023-07-16",
+  "email": "woosuk1893@naver.com",
+  "name": "seller",
+  "password": "1234",
+  "phone": "01077421893"
+}
+
+### 로그인 ( 셀러 )
+POST http://localhost:8081/signin/seller
+Content-Type: application/json
+
+{
+  "email": "woosuk1893@naver.com",
+  "password": "string"
+}
