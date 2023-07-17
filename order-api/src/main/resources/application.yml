@@ -1,5 +1,6 @@
 server:
-  port: 8081
+  shutdown: graceful
+  port: 8082
 
 spring:
   config:
@@ -10,14 +11,17 @@ spring:
       matching-strategy: ant_path_matcher
 
   datasource:
-    url: jdbc:mysql://localhost:3307/cmsuser?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3307/cmsorder?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 1
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
+  redis:
+    host: localhost
+    port: 6379
 
 feign:
   okhttp:
